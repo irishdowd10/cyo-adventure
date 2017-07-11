@@ -1,0 +1,20 @@
+<div id = "newPlayerForm">
+   <div>
+     <label>Name: </label>
+     <input #newName>
+   </div>
+   <div>
+    <label>Character descriptor:</label>
+    <select #newGenre>
+      <option [value]="Hulking"> Hulking </option>
+      <option [value]="Sneaky"> Sneaky </option>
+      <option [value]="Ompnipotent"> Omnipotent </option>
+      <option [value]="Insane"> Insane </option>
+      <option [value]="Grouchy"> Grouchy </option>
+      <option [value]="Cowardly"> Cowardly </option>
+    </select>
+   </div>
+   <div>
+     <button class="button-margin" (click)="submitForm(newName.value, newGenre.value); newName.value=''; newGenre.value='';">Add</button>
+   </div>
+ </div>

@@ -1,0 +1,17 @@
+{ "players": [{
+    "name": "Pete",
+    "description": "Sneaky",
+    "points": 3,
+    "id": "1"
+      }, {
+    "name": "Jun",
+    "description": "Omnipotent",
+    "points": 3,
+    "id": "2"
+      }, {
+    "name": "John",
+    "description": "Insane",
+    "points": 3,
+    "id": "3"
+  }]
+}

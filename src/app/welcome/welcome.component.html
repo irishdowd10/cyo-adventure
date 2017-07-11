@@ -1,0 +1,5 @@
+<div *ngFor="let player of players | async" (click)="goToGameStart(player)">
+  <div class="panel-body">
+    <h3><em>{{player.name}}</em> the {{player.description}}</h3>
+  </div>
+</div>
