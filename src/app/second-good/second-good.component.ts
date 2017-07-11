@@ -6,12 +6,12 @@ import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-game-start',
-  templateUrl: './game-start.component.html',
-  styleUrls: ['./game-start.component.css'],
+  selector: 'app-second-good',
+  templateUrl: './second-good.component.html',
+  styleUrls: ['./second-good.component.css'],
   providers: [PlayerService]
 })
-export class GameStartComponent implements OnInit {
+export class SecondGoodComponent implements OnInit {
   playerId: string;
   playerToDisplay;
 
@@ -19,22 +19,23 @@ export class GameStartComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private playerService: PlayerService)
-   { }
+    private playerService: PlayerService
+  ) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-     this.playerId = urlParameters['id'];
+    this.playerId = urlParameters['id'];
    });
-   this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
+  this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
 
-  goToSecondGood(playerId) {
-    this.router.navigate(['second-good', playerId]);
+  goToThirdGoodGood(playerId) {
+    this.router.navigate(['third-good-good', playerId]);
   };
 
-  goToSecondBad(playerId) {
-    this.router.navigate(['second-bad', playerId]);
+  goToThirdGoodBad(playerId) {
+    this.router.navigate(['third-good-bad', playerId]);
   };
+
 
 }

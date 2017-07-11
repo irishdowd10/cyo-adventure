@@ -1,0 +1,9 @@
+<h1>Health: {{(playerToDisplay | async)?.points}}</h1>
+
+<h3>{{(playerToDisplay | async)?.name}} the {{(playerToDisplay | async)?.description}} third-good-good something something</h3>
+
+<p>What do you do?</p>
+
+<p (click)="goToFinalGood(playerId)">Good Thing</p>
+<br>
+<p (click)="goToFinalBad(playerId)">Bad Thing</p>

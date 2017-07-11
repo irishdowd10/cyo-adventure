@@ -22,4 +22,10 @@ export class PlayerService {
      return this.database.object('players/' + playerId);
    }
 
+  minusOne(selectedPlayer: Player) {
+    // var test = parseInt(selectedPlayer.points);
+    // console.log(parseInt(selectedPlayer.points));
+    console.log(typeof(selectedPlayer.points));
+  }
+
 }

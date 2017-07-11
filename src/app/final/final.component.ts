@@ -5,13 +5,14 @@ import { Player } from '../player.model';
 import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-game-start',
-  templateUrl: './game-start.component.html',
-  styleUrls: ['./game-start.component.css'],
+  selector: 'app-final',
+  templateUrl: './final.component.html',
+  styleUrls: ['./final.component.css'],
   providers: [PlayerService]
 })
-export class GameStartComponent implements OnInit {
+export class FinalComponent implements OnInit {
   playerId: string;
   playerToDisplay;
 
@@ -19,22 +20,14 @@ export class GameStartComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private playerService: PlayerService)
-   { }
+    private playerService: PlayerService
+  ) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-     this.playerId = urlParameters['id'];
+    this.playerId = urlParameters['id'];
    });
    this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
-
-  goToSecondGood(playerId) {
-    this.router.navigate(['second-good', playerId]);
-  };
-
-  goToSecondBad(playerId) {
-    this.router.navigate(['second-bad', playerId]);
-  };
 
 }

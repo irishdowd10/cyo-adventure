@@ -6,12 +6,12 @@ import { PlayerService } from '../player.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-game-start',
-  templateUrl: './game-start.component.html',
-  styleUrls: ['./game-start.component.css'],
+  selector: 'app-third-good-bad',
+  templateUrl: './third-good-bad.component.html',
+  styleUrls: ['./third-good-bad.component.css'],
   providers: [PlayerService]
 })
-export class GameStartComponent implements OnInit {
+export class ThirdGoodBadComponent implements OnInit {
   playerId: string;
   playerToDisplay;
 
@@ -19,8 +19,8 @@ export class GameStartComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private playerService: PlayerService)
-   { }
+    private playerService: PlayerService
+  ) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
@@ -28,13 +28,11 @@ export class GameStartComponent implements OnInit {
    });
    this.playerToDisplay = this.playerService.getPlayerById(this.playerId);
   }
-
-  goToSecondGood(playerId) {
-    this.router.navigate(['second-good', playerId]);
+  goToFinalGood(playerId) {
+    this.router.navigate(['final-good', playerId]);
   };
 
-  goToSecondBad(playerId) {
-    this.router.navigate(['second-bad', playerId]);
+  goToFinalBad(playerId) {
+    this.router.navigate(['final-bad', playerId]);
   };
-
 }

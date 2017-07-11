@@ -16,12 +16,12 @@ export class WelcomeComponent implements OnInit {
   constructor(private router: Router, private playerService: PlayerService) { }
 
   ngOnInit() {
-     this.players = this.playerService.getPlayer();
+    this.players = this.playerService.getPlayer();
   }
 
   addPlayer(newPlayer: Player) {
-   this.players.push(newPlayer);
- }
+    this.players.push(newPlayer);
+  }
 
   goToGameStart(clickedPlayer) {
     this.router.navigate(['game-start', clickedPlayer.$key]);
